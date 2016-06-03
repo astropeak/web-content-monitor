@@ -1,0 +1,47 @@
+* web-content-monitor
+  Monitor, store, track some element values in a web page
+  
+** user story
+   1. user click an element as traget, and giving monitor interval
+   2. the element value(the DOM innerHTML) will be tracked every interval time, if changed, then save it.
+   3. use can see the data history.
+** learn
+*** phantomjs usage
+    phantomjs is a headless browser. Phantomjs can be installed via npm.
+    
+    node-phantomjs-simple is a node module that bridge nodejs and phantomjs. So that you can phantomjs API's in nodejs codes.
+    
+    install:
+    #+begin_src sh
+    # install the bridge module betwwen phantomjs and nodejs
+    npm install node-phantomjs-simple
+    # install phantomjs it self
+    npm install phantomjs
+    #+end_src
+
+    web-scraping.js now works. It scrap all h2 and p element of the given page.
+    How to run:
+    #+begin_src perl :results output
+    node web-scraping.js
+    #+end_src
+
+    result:
+    #+begin_src org
+    $ node web-scriping.js
+    opened site?  success
+    { h2:
+       [ 'Basic examples',
+         'Rendering/rasterization',
+         'Page automation',
+         'Network',
+         'Testing',
+         'Browser',
+         'Documentation',
+         'Community:' ],
+      p:
+       [ 'PhantomJS comes with a lot of <a href="https://github.com/ariya/phantomjs/tree/master/examples">included examples</a>.',
+         '(More to be written)',
+         '\n        © Copyright 2010-2016 <a href="http://twitter.com/AriyaHidayat">Ariya Hidayat</a> — Homepage design by <a href="http://svay.com/">Maurice Svay</a> — Documentation design by <a href="http://twitter.com/fold_left">Jamie Mason</a>.\n      ' ] }
+    #+end_src
+
+
