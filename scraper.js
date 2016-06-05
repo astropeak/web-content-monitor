@@ -29,10 +29,4 @@ function get(url, selector, cb) {
     });
 }
 
-// get("http://phantomjs.org/examples", "h2");
-get("http://www.baidu.com", "p", function (err, result) {
-    console.log("err: ", err);
-    console.log("result: ", result);
-});
-
 module.exports = {'get':get};
