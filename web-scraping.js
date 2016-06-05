@@ -5,7 +5,7 @@ driver.create({ path: require('phantomjs').path }, function (err, browser) {
         // return page.open("http://tilomitra.com/repository/screenscrape/ajax.html", function (err,status) {
         return page.open("http://phantomjs.org/examples", function (err,status) {
             console.log("opened site? ", status);
-            page.includeJs('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', function (err) {
+            page.injectJs('./js/jquery.min.js', function (err) {
                 // jQuery Loaded.
                 // Wait for a bit for AJAX content to load on the page. Here, we are waiting 5 seconds.
                 setTimeout(function () {
@@ -25,7 +25,7 @@ driver.create({ path: require('phantomjs').path }, function (err, browser) {
                         console.log(result);
                         browser.exit();
                     });
-                }, 5000);
+                }, 2000);
             });
         });
     });
