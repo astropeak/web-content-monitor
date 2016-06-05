@@ -22,7 +22,7 @@ function get(url, selector, cb) {
                             cb(err, result);
                             browser.exit();
                         });
-                    }, 1000);
+                    }, 2000);
                 });
             });
         });
